@@ -1,0 +1,15 @@
+.navbar {
+  margin: 0 3rem;
+  padding: 2rem 0;
+}
+
+.h1 {
+  font-weight: 800;
+}
+
+.btn {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 9px;
+}

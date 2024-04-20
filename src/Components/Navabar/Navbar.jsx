@@ -4,7 +4,7 @@ import logo from "../../assets/cart-logo.svg";
 const Navbar = () => {
   return (
     <>
-      <header className="navbar navbar-light bg-light mx-auto mb-5">
+      <header className="navbar navbar-light bg-light mb-5">
         <a href="#">
           <img
             className="img-fluid"
@@ -14,9 +14,7 @@ const Navbar = () => {
           />
         </a>
         <p className="h1">My Shop</p>
-        <button className="btn btn-primary px-4 py-3 rounded font-weight-bold">
-          View Cart
-        </button>
+        <button className="btn btn-primary ">View Cart</button>
       </header>
     </>
   );
