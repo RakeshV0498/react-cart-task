@@ -1,8 +1,8 @@
-import { image1 } from "../src/assets/Products/iPhone-9.jpeg";
-import { image2 } from "../src/assets/Products/iPhone-X.webp";
-import { image3 } from "../src/assets/Products/Samsung-U9.jpg";
-import { image4 } from "../src/assets/Products/OPPO-F19.jpg";
-import { image5 } from "../src/assets/Products/Huawei-P30.webp";
+import image1 from "./assets/Products/iPhone-9.jpeg";
+import image2 from "./assets/Products/Iphone-X.webp";
+import image3 from "./assets/Products/Samsung-U9.jpg";
+import image4 from "./assets/Products/OPPO-F19.jpg";
+import image5 from "./assets/Products/Huawei-P30.webp";
 
 const products = [
   {
@@ -11,11 +11,12 @@ const products = [
     description: "An apple mobile which is nothing like apple",
     price: 549,
     discountPercentage: 12.96,
-    rating: 4.69,
+    rating: 3.69,
     stock: 94,
     brand: "Apple",
     category: "smartphones",
     image: image1,
+    count: 0,
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ const products = [
     brand: "Apple",
     category: "smartphones",
     image: image2,
+    count: 0,
   },
   {
     id: 3,
@@ -42,6 +44,7 @@ const products = [
     brand: "Samsung",
     category: "smartphones",
     image: image3,
+    count: 0,
   },
   {
     id: 4,
@@ -54,6 +57,7 @@ const products = [
     brand: "OPPO",
     category: "smartphones",
     image: image4,
+    count: 0,
   },
   {
     id: 5,
@@ -67,6 +71,7 @@ const products = [
     brand: "Huawei",
     category: "smartphones",
     image: image5,
+    count: 0,
   },
 ];
 
