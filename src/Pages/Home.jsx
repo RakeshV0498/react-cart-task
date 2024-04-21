@@ -8,11 +8,12 @@ const Home = () => {
   const [cart, setCart] = useState({});
 
   const updateCart = (productId, count) => {
-    console.log(count);
-    setCart((prevCart) => ({
-      ...prevCart,
-      [productId]: count,
-    }));
+    setCart((prevCart) => {
+      return {
+        ...prevCart,
+        [productId]: count,
+      };
+    });
   };
 
   // Correct rendering of Navbar component
