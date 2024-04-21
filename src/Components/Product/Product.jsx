@@ -1,9 +1,26 @@
-/* eslint-disable react/prop-types */
+// /* eslint-disable react/prop-types */
+import { useState } from "react";
 import "./Product.css";
 import PropTypes from "prop-types";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, cart, updateCart }) => {
   const { id, title, description, price, brand, image } = product;
+  const [show, setShow] = useState(false);
+
+  const handleCart = () => {
+    setShow(!show);
+    updateCart(id, cart[id] ? cart[id] + 1 : 1);
+  };
+
+  const handleCartIncrement = () => {
+    updateCart(id, cart[id] ? cart[id] + 1 : 1);
+    setShow(true);
+  };
+
+  const handleCartDecrement = () => {
+    updateCart(id, cart[id] ? cart[id] - 1 : 0);
+    if (cart[id] === 1) setShow(false);
+  };
 
   return (
     <article id={id} className="product-card container">
@@ -20,7 +37,21 @@ const ProductCard = ({ product }) => {
         <p className="product-description">{description}</p>
         <p className="product-price">Price: ${price}</p>
         <StarRating product={product} />
-        <button className="btn btn-primary">Add to cart</button>
+        {!show ? (
+          <button onClick={handleCart} className="btn btn-primary">
+            Add to cart
+          </button>
+        ) : (
+          <div className="btn-container">
+            <button onClick={handleCartDecrement} className="btn btn-dec">
+              -
+            </button>
+            <p className="item-count">{cart[id]}</p>
+            <button onClick={handleCartIncrement} className="btn btn-inc">
+              +
+            </button>
+          </div>
+        )}
       </section>
     </article>
   );
@@ -70,12 +101,16 @@ ProductCard.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    discountPercentage: PropTypes.number.isRequired,
-    stock: PropTypes.number.isRequired,
     brand: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
+  cart: PropTypes.object.isRequired,
+  updateCart: PropTypes.func.isRequired,
+};
+
+StarRating.propTypes = {
+  product: PropTypes.object,
+  rating: PropTypes.number,
 };
 
 export default ProductCard;

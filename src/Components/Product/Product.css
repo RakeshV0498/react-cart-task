@@ -39,3 +39,24 @@
 .product-description {
   font-size: 2rem;
 }
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  font-size: 2rem;
+}
+
+.item-count {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+  border: 2px solid #ccc;
+  padding: 0.8rem 1.2rem;
+  background-color: aliceblue;
+  border-radius: 6px;
+}
